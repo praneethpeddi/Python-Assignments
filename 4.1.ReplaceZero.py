@@ -1,4 +1,4 @@
-n = int(input('How many numbers do you want to input? '))
+n = int(input('Enter n value: '))
 elements = []
 Outputs = []
 for i in range(n):
