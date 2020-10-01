@@ -1,4 +1,4 @@
-n = 5
+n = int(input('Enter n value: '))
 blank = 1
 while n >= 1:
     for i in range(1, n + 1):
