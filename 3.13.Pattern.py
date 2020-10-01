@@ -7,4 +7,4 @@ for i in range(1, n):
         else:
             print(num, end=' ')
             num += 1
-    print("")
+    print()
