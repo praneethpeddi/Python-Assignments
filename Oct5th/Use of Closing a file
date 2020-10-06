@@ -1,0 +1,7 @@
+Closing of file is required after opening for the following reasons :
+
+1. When there are many number of files opened, we get a point where we cannot open a new file descriptors
+2. It can slow down your program
+3. More used space in the RAM which will impact performance.
+4. when you open a file, the file is locked for writing if it is opened in write mode. Thus you cannot access that
+file outside your program while it is open in python.
