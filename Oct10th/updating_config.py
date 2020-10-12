@@ -56,10 +56,10 @@ def updated_dhcpd_data(last_digit, csv_data, hardware_list):
             last_digit += 1
             print()
             print('192.168.1.' + str(last_digit))
-            string += 'host ' + name + ' {\n'
-            string += ' ' * 8 + 'hardware ethernet ' + hw_id + ';\n'
-            string += ' ' * 8 + 'fixed-address ' + '192.168.1.' + str(last_digit) + ';\n'
-            string += ' ' * 8 + 'option routers 192.168.1.1;\n}\n\n'
+            updt_data += 'host ' + name + ' {\n'
+            updt_data += ' ' * 8 + 'hardware ethernet ' + hw_id + ';\n'
+            updt_data += ' ' * 8 + 'fixed-address ' + '192.168.1.' + str(last_digit) + ';\n'
+            updt_data += ' ' * 8 + 'option routers 192.168.1.1;\n}\n\n'
     return updt_data
 
 
