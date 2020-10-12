@@ -50,7 +50,7 @@ def get_IP(last_conf):
 
 
 def updated_dhcpd_data(last_digit, csv_data, hardware_list):
-    string = ''
+    updt_data = ''
     for name, hw_id in csv_data.items():
         if hw_id not in hardware_list:
             last_digit += 1
@@ -60,12 +60,12 @@ def updated_dhcpd_data(last_digit, csv_data, hardware_list):
             string += ' ' * 8 + 'hardware ethernet ' + hw_id + ';\n'
             string += ' ' * 8 + 'fixed-address ' + '192.168.1.' + str(last_digit) + ';\n'
             string += ' ' * 8 + 'option routers 192.168.1.1;\n}\n\n'
-    return string
+    return updt_data
 
 
-def write_dhcpd_conf(string):
+def write_dhcpd_conf(updt_data):
     data = open('dhcpd.conf', 'a')
-    data.write(string)
+    data.write(updt_data)
     data.close()
 
 
@@ -76,9 +76,9 @@ def main():
     print(last_digit)
     csv_data = reading_csv_file()
     print(csv_data)
-    string = updated_dhcpd_data(last_digit, csv_data, hardware_list)
-    print(string)
-    write_dhcpd_conf(string)
+    updt_data = updated_dhcpd_data(last_digit, csv_data, hardware_list)
+    print(updt_data)
+    write_dhcpd_conf(updt_data)
 
 
 if __name__ == '__main__':
