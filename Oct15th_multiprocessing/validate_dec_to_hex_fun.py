@@ -3,7 +3,7 @@ def dec_to_hex_conversion(num):
 		hex_value = hex(num)
 		return hex_value
 	else:
-		print("This number cannot be converted to hexadecimal format")
+		print(f'This {num} cannot be converted to hexadecimal format')
 	#hex_value = list(num)
 	#n_hex_value = hex_value.replace("'", '')
 	#for i in n_hex_value:
