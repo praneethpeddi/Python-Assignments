@@ -1,0 +1,10 @@
+recipient name :
+@ symbol
+domain name : 
+top-level domain :
+
+1. should start with an alpha or a number
+2. should contain @ followed by alpha
+3. should end with .com or .in
+4. should not starts with spacial characters
+5. should not contain (.) consecutively
