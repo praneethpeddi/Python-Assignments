@@ -1,6 +1,0 @@
-Use of __init__ file :
-
---> The __init__.py treats the directory as package and the files inside it as module so that we can import it in another folder.
---> If we have __init__.py in the directories, we can import all the files in the directory irrespective of the path where the file is being imported.
---> __init__.py can just be an empty file and can be created easily
---> importing the module will fail if we dont have __init__.py, when importing the submodules inside the directory.(In this python will not look for the submodules)
