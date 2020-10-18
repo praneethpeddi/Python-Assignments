@@ -26,7 +26,4 @@ data_to_verify = [
 @pytest.mark.parametrize("email", data_to_verify)
 def test_is_valid_email(email):
     actual_value = is_valid_email(email["data"])
-    assert actual_value == email["exp_result"], f'{actual_value}'
-	
-	
-#
+    assert actual_value == email["exp_result"], f"return value from the function 'is_valid_email' is {actual_value}', expected : {email['exp_result']}"
