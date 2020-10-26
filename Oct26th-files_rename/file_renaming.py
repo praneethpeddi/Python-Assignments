@@ -1,5 +1,4 @@
 import os
-from pathlib import Path
 
 
 def rename_of_file(old, new):
