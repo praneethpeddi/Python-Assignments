@@ -3,6 +3,7 @@ import urllib.request
 import re
 import os
 import threading
+import asyncio
 
 
 def get_html(url):
@@ -31,6 +32,13 @@ def create_thread(url):
     print(html)
 
 
+async def create_sub_routine(url):
+    # print(f'{asyncio.Task.current_task()}')
+    print(f'{asyncio.get_running_loop()}')
+    html = urllib.request.urlopen(url).read()
+    print(html)
+
+
 def main():
     url = 'https://www.python.org/'
     sub_urls = get_html(url)
@@ -44,6 +52,9 @@ def main():
         if pid == 0:
             create_process(url)
             break
+
+    for url in sub_urls:
+        asyncio.run(create_sub_routine(url))
 
 
 if __name__ == '__main__':
