@@ -2,15 +2,13 @@ from bs4 import BeautifulSoup
 import urllib.request
 import re
 import os
+import threading
 
 
 def get_html(url):
     link_urls1 = []
     html = urllib.request.urlopen(url)
     soup = BeautifulSoup(html, "html.parser")
-    # with open('html.txt','w') as f:
-    #     for i in soup:
-    #         f.write(str(i))
     for link in soup.findAll('a', attrs={'href': re.compile("^http://")}):
         link_urls1.append(link.get('href'))
     sub_str1 = 'feedproxy'
@@ -21,14 +19,14 @@ def get_html(url):
     return link_urls2
 
 
-def get_html_for_sub_urls(sub_urls):
-    for url in sub_urls:
-        html = urllib.request.urlopen(url).read()
-        print(html)
-
-
 def create_process(url):
-    print(f"pid : {os.getpid()}, url : {url}")
+    print(f"ppid : {os.getppid()}, pid : {os.getpid()}")
+    html = urllib.request.urlopen(url).read()
+    print(html)
+
+
+def create_thread(url):
+    print(f'{threading.current_thread().getName()}, threading started')
     html = urllib.request.urlopen(url).read()
     print(html)
 
@@ -36,7 +34,11 @@ def create_process(url):
 def main():
     url = 'https://www.python.org/'
     sub_urls = get_html(url)
-    get_html_for_sub_urls(sub_urls)
+    for url in sub_urls:
+        thread = threading.Thread(target=create_thread, args=(url,))
+        thread.start()
+        thread.join()
+
     for url in sub_urls:
         pid = os.fork()
         if pid == 0:
