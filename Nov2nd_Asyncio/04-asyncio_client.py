@@ -25,10 +25,10 @@ async def get_answer_by_question(question):
     print()
 
 async def main():
-    task1 = get_answer_by_question("One-page question")
+    task1 = loop.create_taskget_answer_by_question("One-page question")
     #await asyncio.sleep(1)
-    task2 = get_answer_by_question("One-line question")
-    task3 = get_answer_by_question("Booleon question")
+    task2 = loop.create_taskget_answer_by_question("One-line question")
+    task3 = loop.create_taskget_answer_by_question("Booleon question")
     
     await asyncio.wait([task1, task2, task3])
     return task1, task2, task3
