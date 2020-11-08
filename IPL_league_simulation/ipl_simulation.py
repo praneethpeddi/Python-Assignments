@@ -29,7 +29,7 @@ def match_between_teams(teams, matches):
     print(f"Total score of each team before league matches : {total_score_each_team}")
     for each_match in matches:
         res_each_match = random.choice(each_match)
-        print(f"Winner of the team {each_match} : {res_each_match}")
+        print(f"Winner of the match {each_match} : {res_each_match}")
         total_score_each_team[res_each_match] += 2
     print(f"Total score of each team after league matches : {total_score_each_team}")
     return total_score_each_team
