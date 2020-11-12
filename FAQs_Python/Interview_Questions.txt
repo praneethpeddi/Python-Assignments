@@ -1,0 +1,27 @@
+1. How to handle element not found error
+2. Program to find no of words, no of characters, no of lines and no of paragraphs in a text file
+3. What is multiprocessing and multithreading - how to implement these 
+4. What is iterator, generator
+5. Pickling and unpickling
+6. Diff b/w range and xrange
+7. Diff b/w constructor and destructor
+8. Self keyword in python
+9. Hash table and Hash Map in python
+10. Diff b/w list and tuple
+11. Diff b/w .py and .pyc files
+12. How to reverse a number in python
+13. How to count no of links in a webpage
+14. How to Handle the alerts in a webpage
+15. How do you wait for a homepage to load
+16. How to handle new window in the webpages
+17. How to test the Login page with different set of inputs
+18. What is call by value and call by reference
+19. Explain get attributes method
+20. What is metadata
+21. Inheritance and types and explain each with a example
+22. list_ = [{'P': 'Python', 'state' : 'False'}, {'J': 'Java', 'state' : 'True'}, {'G': 'Git', 'state' : 'True'},
+			{'S': 'Selenium', 'state' : 'False'},{'R': 'Ruby', 'state' : 'False'}, {'X': 'XML', 'state' : 'True'}]
+
+	Count no of false and true in the given list of dictionary
+23. Primitive data types in python
+24. What are closures
